@@ -1,4 +1,20 @@
 $(document).ready(function () {
+  $("#formTambah :checkbox").on("change", function () {
+    if (this.checked) {
+      $(".akun").show(500);
+    } else {
+      $(".akun").hide(500);
+    }
+  });
+
+  $("#formUbah :checkbox").on("change", function () {
+    if (this.checked) {
+      $(".akun").show(500);
+    } else {
+      $(".akun").hide(500);
+    }
+  });
+
   $(".surats").on("change", function (e) {
     e.preventDefault();
 

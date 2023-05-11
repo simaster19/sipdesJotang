@@ -65,6 +65,12 @@ include 'layouts/header.php';
                                 <li class="submenu-item ">
                                     <a href="?page=data-pegawai">Data Pegawai</a>
                                 </li>
+                                <li class="submenu-item ">
+                                    <a href="?page=data-rt">Data RT</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href="?page=data-rw">Data RW</a>
+                                </li>
 
                             </ul>
                         </li>
@@ -160,7 +166,7 @@ include 'layouts/header.php';
 
             ?>
 
-            <footer>
+            <!-- <footer>
                 <div class="footer clearfix mb-0 text-muted">
                     <div class="float-start">
                         <p>2021 &copy; Mazer</p>
@@ -169,7 +175,7 @@ include 'layouts/header.php';
                         <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a href="https://saugi.me">Saugi</a></p>
                     </div>
                 </div>
-            </footer>
+            </footer> -->
         </div>
     </div>
     <?php

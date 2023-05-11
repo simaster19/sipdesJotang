@@ -39,30 +39,25 @@ include '../Controller/queryData.php';
                 <table class="table table-striped" id="table1">
                     <thead>
                         <tr>
-                            <th>No</th>
+
                             <th>No. Surat</th>
-                            <th>NIK</th>
-                            <th>Nama</th>
-                            <th>Jenis Kelamin</th>
-                            <th>Tanggal Surat</th>
-                            <th>Status Surat</th>
+                            <th>Nama KK</th>
+                            <th>No. KK</th>
+                            <th>Ambil</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         $suratKematian = querySuratKematian();
-                        $i = 1;
                         foreach ($suratKematian as $data) {
                         ?>
                             <tr>
-                                <td><?= $i++ ?></td>
+
                                 <td><?= $data['no_surat'] ?></td>
-                                <td><?= $data['nik'] ?></td>
-                                <td><?= $data['nama'] ?></td>
-                                <td><?= $data['jenis_kelamin'] ?></td>
-                                <td><?= $data['tanggal_surat'] ?></td>
-                                <td><?= $data['status_surat'] ?></td>
+                                <td><?= $data['nama_kk'] ?></td>
+                                <td><?= $data['no_kk'] ?></td>
+                                <td><?= $data['ambil'] ?></td>
                                 <td>
                                     <button data-bs-toggle="modal" data-bs-target="#ubahSuratKematian<?= $data['ids'] ?>" title="Ubah Pegawai" class="btn-ubahSuratKematian btn btn-primary rounded-pill"><i class="bi bi-pencil-fill"></i></button>
 

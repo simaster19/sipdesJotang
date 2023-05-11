@@ -1175,111 +1175,28 @@ include '../Controller/queryData.php';
                         <!-- Surat Pengantar Dinas Start -->
                         <div class="card-content" id="surat_pengantar_dinas" style="display:none;">
                             <div class="card-body">
-                                <h4 class="card-title">Data Pribadi</h4>
+                                <h4 class="card-title">Form Surat</h4>
                                 <form action="../Controller/simpan_surat_pengantar_dinas.php" class="form" method="POST">
                                     <input type="hidden" name="id_surat" value="">
                                     <div class="row">
                                         <div class="col-md-6 col-12">
                                             <div class="form-group mandatory">
-                                                <label for="nama" class="form-label">Nama</label>
-                                                <input type="text" id="nama" class="form-control" placeholder="Masukkan Nama" name="nama" data-parsley-required="true">
+                                                <label for="uraian" class="form-label">Uraian</label>
+                                                <input type="text" id="uraian" class="form-control" placeholder="Masukkan Nama" name="uraian" data-parsley-required="true">
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group mandatory">
-                                                <label for="nik" class="form-label">NIK</label>
-                                                <input type="number" id="nik" class="form-control" placeholder="Masukkan NIK" name="nik" data-parsley-required="true">
+                                                <label for="jumlah" class="form-label">Jumlah</label>
+                                                <input type="text" id="jumlah" class="form-control" placeholder="Masukkan NIK" name="jumlah" data-parsley-required="true">
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group mandatory">
-                                                <label for="tempat_lahir" class="form-label">Tempat Lahir</label>
-                                                <input type="text" id="tempat_lahir" class="form-control" placeholder="Masukkan Tempat Lahir" name="tempat_lahir" data-parsley-required="true">
+                                                <label for="keterangan" class="form-label">Keterangan</label>
+                                                <input type="text" id="keterangan" class="form-control" placeholder="Masukkan Tempat Lahir" name="keterangan" data-parsley-required="true">
                                             </div>
                                         </div>
-
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group mandatory">
-                                                <label for="tanggal_lahir" class="form-label">Tanggal Lahir</label>
-                                                <input type="date" id="tanggal_lahir" class="form-control" placeholder="Masukkan Tanggal Lahir" name="tanggal_lahir" data-parsley-required="true">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group mandatory">
-                                                <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
-                                                <select class="form-control" name="jenis_kelamin" id="">
-                                                    <option value="" selected disabled>--Pilih--</option>
-                                                    <option value="L">Laki-Laki</option>
-                                                    <option value="P">Perempuan</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group mandatory">
-                                                <label for="agama" class="form-label">Agama</label>
-                                                <input type="text" id="agama" class="form-control" placeholder="Masukkan Agama" name="agama" data-parsley-required="true">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group mandatory">
-                                                <label for="dusun" class="form-label">Dusun</label>
-                                                <input type="text" id="dusun" class="form-control" placeholder="Masukkan Dusun" name="dusun" data-parsley-required="true">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-12">
-                                            <div class="form-group mandatory">
-                                                <label for="rt" class="form-label">RT</label>
-                                                <input type="number" id="rt" class="form-control" placeholder="002" name="rt" data-parsley-required="true">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-12">
-                                            <div class="form-group mandatory">
-                                                <label for="rw" class="form-label">RW</label>
-                                                <input type="number" id="rw" class="form-control" placeholder="Masukkan Tempat Lahir" name="rw" data-parsley-required="true">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group mandatory">
-                                                <label for="desa" class="form-label">Desa</label>
-                                                <input type="text" id="desa" class="form-control" placeholder="Masukkan Desa" name="desa" data-parsley-required="true">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group mandatory">
-                                                <label for="kecamatan" class="form-label">Kecamatan</label>
-                                                <input type="text" id="kecamatan" class="form-control" placeholder="Masukkan Kecamatan" name="kecamatan" data-parsley-required="true">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group mandatory">
-                                                <label for="kota" class="form-label">Kota</label>
-                                                <input type="text" id="kota" class="form-control" placeholder="Masukkan Kab/Kota" name="kota" data-parsley-required="true">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group mandatory">
-                                                <label for="jalan" class="form-label">Jalan</label>
-                                                <textarea class="form-control" name="jalan" id="" cols="10" rows="5"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <hr class="divider mb-4">
-                                    <h4 class="card-title">Data Surat</h4>
-                                    <div class="row">
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group mandatory">
-                                                <label for="keperluan" class="form-label">Keperluan</label>
-                                                <input type="text" id="keperluan" class="form-control" placeholder="Keperluan" name="keperluan" data-parsley-required="true">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group mandatory">
-                                                <label for="masa_berlaku" class="form-label">Masa Berlaku</label>
-                                                <input type="date" id="masa_berlaku" class="form-control" placeholder="Nama Ibu" name="masa_berlaku" data-parsley-required="true">
-                                            </div>
-                                        </div>
-
                                         <div class="col-md-12 col-12">
                                             <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
                                         </div>
@@ -1293,55 +1210,37 @@ include '../Controller/queryData.php';
                         <!-- Surat Pindah Start -->
                         <div class="card-content" id="surat_pindah" style="display:none;">
                             <div class="card-body">
-                                <h4 class="card-title">Data Pribadi</h4>
+                                <h4 class="card-title">Form Surat</h4>
                                 <form action="../Controller/simpan_surat_pindah.php" class="form">
                                     <div class="row">
                                         <div class="col-md-6 col-12">
                                             <div class="form-group mandatory">
-                                                <label for="nama" class="form-label">Nama</label>
-                                                <input type="text" id="nama" class="form-control" placeholder="Masukkan Nama" name="nama" data-parsley-required="true">
+                                                <label for="no_kk" class="form-label">No. KK</label>
+                                                <input type="text" id="no_kk" class="form-control" placeholder="Masukkan Nama" name="no_kk" data-parsley-required="true">
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group mandatory">
-                                                <label for="nik" class="form-label">NIK</label>
-                                                <input type="number" id="nik" class="form-control" placeholder="Masukkan NIK" name="nik" data-parsley-required="true">
+                                                <label for="nama_pemohon" class="form-label">Nama Lengkap Pemohon</label>
+                                                <input type="text" id="nama_pemohon" class="form-control" placeholder="Masukkan NIK" name="nama_pemohon" data-parsley-required="true">
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group mandatory">
-                                                <label for="tempat_lahir" class="form-label">Tempat Lahir</label>
-                                                <input type="text" id="tempat_lahir" class="form-control" placeholder="Masukkan Tempat Lahir" name="tempat_lahir" data-parsley-required="true">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group mandatory">
-                                                <label for="tanggal_lahir" class="form-label">Tanggal Lahir</label>
-                                                <input type="date" id="tanggal_lahir" class="form-control" placeholder="Masukkan Tanggal Lahir" name="tanggal_lahir" data-parsley-required="true">
+                                                <label for="nik_pemohon" class="form-label">NIK</label>
+                                                <input type="text" id="nik_pemohon" class="form-control" placeholder="Masukkan Tempat Lahir" name="nik_pemohon" data-parsley-required="true">
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group mandatory">
-                                                <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
-                                                <select class="form-control" name="jenis_kelamin" id="">
-                                                    <option value="" selected disabled>--Pilih--</option>
-                                                    <option value="L">Laki-Laki</option>
-                                                    <option value="P">Perempuan</option>
-                                                </select>
+                                                <label for="jenis_permohonan" class="form-label">Jenis Permohonan</label>
+                                                <input type="text" id="jenis_permohonan" class="form-control" placeholder="Masukkan Tempat Lahir" name="jenis_permohonan" data-parsley-required="true">
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group mandatory">
-                                                <label for="agama" class="form-label">Agama</label>
-                                                <input type="text" id="agama" class="form-control" placeholder="Masukkan Agama" name="agama" data-parsley-required="true">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group mandatory">
-                                                <label for="dusun" class="form-label">Dusun</label>
-                                                <input type="text" id="dusun" class="form-control" placeholder="Masukkan Dusun" name="dusun" data-parsley-required="true">
+                                                <label for="alamat" class="form-label">Alamat</label>
+                                                <input type="text" id="alamat" class="form-control" placeholder="Masukkan Tanggal Lahir" name="alamat" data-parsley-required="true">
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-12">
@@ -1376,13 +1275,86 @@ include '../Controller/queryData.php';
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group mandatory">
-                                                <label for="jalan" class="form-label">Jalan</label>
-                                                <textarea class="form-control" name="jalan" id="" cols="10" rows="5"></textarea>
+                                                <label for="kode_pos" class="form-label">Kode Pos</label>
+                                                <input type="text" id="kode_pos" class="form-control" placeholder="Masukkan Kab/Kota" name="kode_pos" data-parsley-required="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group mandatory">
+                                                <label for="alamat_lengkap_pindah" class="form-label">Alamat</label>
+                                                <input type="text" id="alamat_lengkap_pindah" class="form-control" placeholder="Masukkan Kab/Kota" name="alamat_lengkap_pindah" data-parsley-required="true">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3 col-12">
+                                            <div class="form-group mandatory">
+                                                <label for="rt_pindah" class="form-label">RT</label>
+                                                <input type="number" id="rt_pindah" class="form-control" placeholder="002" name="rt_pindah" data-parsley-required="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-12">
+                                            <div class="form-group mandatory">
+                                                <label for="rw_pindah" class="form-label">RW</label>
+                                                <input type="number" id="rw_pindah" class="form-control" placeholder="Masukkan Tempat Lahir" name="rw_pindah" data-parsley-required="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group mandatory">
+                                                <label for="desa_pindah" class="form-label">Desa</label>
+                                                <input type="text" id="desa_pindah" class="form-control" placeholder="Masukkan Desa" name="desa_pindah" data-parsley-required="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group mandatory">
+                                                <label for="kecamatan_pindah" class="form-label">Kecamatan</label>
+                                                <input type="text" id="kecamatan_pindah" class="form-control" placeholder="Masukkan Kecamatan" name="kecamatan_pindah" data-parsley-required="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group mandatory">
+                                                <label for="kota_pindah" class="form-label">Kota</label>
+                                                <input type="text" id="kota_pindah" class="form-control" placeholder="Masukkan Kab/Kota" name="kota_pindah" data-parsley-required="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group mandatory">
+                                                <label for="kode_pos_pindah" class="form-label">Kode Pos</label>
+                                                <input type="text" id="kode_pos_pindah" class="form-control" placeholder="Masukkan Kab/Kota" name="kode_pos_pindah" data-parsley-required="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group mandatory">
+                                                <label for="alasan_pindah" class="form-label">Alasan Pindah</label>
+                                                <input type="text" id="alasan_pindah" class="form-control" placeholder="Masukkan Kab/Kota" name="alasan_pindah" data-parsley-required="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group mandatory">
+                                                <label for="jenis_kepindahan" class="form-label">Kode Pos</label>
+                                                <input type="text" id="jenis_kepindahan" class="form-control" placeholder="Masukkan Kab/Kota" name="jenis_kepindahan" data-parsley-required="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group mandatory">
+                                                <label for="anggota_keluarga_tidak_pindah" class="form-label">Anggota Keluarga Tidak Pindah</label>
+                                                <input type="text" id="anggota_keluarga_tidak_pindah" class="form-control" placeholder="Masukkan Kab/Kota" name="anggota_keluarga_tidak_pindah" data-parsley-required="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group mandatory">
+                                                <label for="anggota_keluarga_yang_pindah" class="form-label">Anggota Keluarga Yang Pindah</label>
+                                                <input type="text" id="anggota_keluarga_yang_pindah" class="form-control" placeholder="Masukkan Kab/Kota" name="anggota_keluarga_yang_pindah" data-parsley-required="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group mandatory">
+                                                <label for="daftar_anggota_keluagra_pindah" class="form-label">Daftar Anggota Keluarga Pindah</label>
+                                                <input type="text" id="daftar_anggota_keluagra_pindah" class="form-control" placeholder="Masukkan Kab/Kota" name="daftar_anggota_keluagra_pindah" data-parsley-required="true">
                                             </div>
                                         </div>
                                     </div>
                                     <hr class="divider mb-4">
-                                    <h4 class="card-title">Data Surat</h4>
+                                    <h4 class="card-title">Form Surat Untuk Orang Asing</h4>
                                     <div class="row">
                                         <div class="col-md-6 col-12">
                                             <div class="form-group mandatory">
