@@ -16,6 +16,7 @@ if (isset($_POST['submit'])) {
 
     $nik                = $_POST['nik'];
     $nama               = $_POST['nama'];
+    $no_kk              = $_POST['no_kk'];
     $tempat_lahir       = $_POST['tempat_lahir'];
     $tanggal_lahir      = $_POST['tanggal_lahir'];
     $kewarganegaraan    = $_POST['kewarganegaraan'];
@@ -27,7 +28,6 @@ if (isset($_POST['submit'])) {
     $desa               = $_POST['desa'];
     $kecamatan          = $_POST['kecamatan'];
     $kota               = $_POST['kota'];
-    $no_kk              = $_POST['no_kk'];
     $keperluan          = $_POST['keperluan'];
     $berlaku_tgl        = $_POST['berlaku_tgl'];
     $berakhir_tgl       = $_POST['berakhir_tgl'];
@@ -41,6 +41,7 @@ if (isset($_POST['submit'])) {
         id_surat,
         nik,
         nama,
+        no_kk,
         tempat_lahir,
         tanggal_lahir,
         kewarganegaraan,
@@ -52,7 +53,6 @@ if (isset($_POST['submit'])) {
         desa,
         kecamatan,
         kota,
-        no_kk,
         keperluan,
         berlaku_tgl,
         berakhir_tgl,
@@ -63,6 +63,7 @@ if (isset($_POST['submit'])) {
             '$id_surat',
             '$nik',
             '$nama',
+            '$no_kk',
             '$tempat_lahir',
             '$tanggal_lahir',
             '$kewarganegaraan',
@@ -74,7 +75,6 @@ if (isset($_POST['submit'])) {
             '$desa',
             '$kecamatan',
             '$kota',
-            '$no_kk',
             '$keperluan',
             '$berlaku_tgl',
             '$berakhir_tgl',

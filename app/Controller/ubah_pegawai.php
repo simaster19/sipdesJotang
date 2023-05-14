@@ -84,6 +84,6 @@ if (isset($_POST['submit'])) {
 
 
     if ($qSimpan) {
-        header('location:../Administrator/?page=data-pegawai&pesan=berhasil');
+        header('location:../Administrator/?page=data-pegawai&pesan=update');
     }
 }

@@ -349,6 +349,12 @@ include '../Controller/queryData.php';
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group mandatory">
+                                                <label for="tanggal_lahir_pelapor" class="form-label">Tanggal Lahir</label>
+                                                <input type="date" id="tanggal_lahir_pelapor" class="form-control" placeholder="Umur" name="tanggal_lahir_pelapor" data-parsley-required="true" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group mandatory">
                                                 <label for="umur_pelapor" class="form-label">Umur</label>
                                                 <input type="number" id="umur_pelapor" class="form-control" placeholder="Umur" name="umur_pelapor" data-parsley-required="true" required>
                                             </div>
@@ -412,7 +418,12 @@ include '../Controller/queryData.php';
                                                 <input type="text" id="nama_saksi1" class="form-control" placeholder="Nama Lengkap" name="nama_saksi1" data-parsley-required="true" required>
                                             </div>
                                         </div>
-
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group mandatory">
+                                                <label for="tanggal_lahir_saksi1" class="form-label">Tanggal Lahir</label>
+                                                <input type="date" id="tanggal_lahir_saksi1" class="form-control" placeholder="Umur" name="tanggal_lahir_saksi1" data-parsley-required="true" required>
+                                            </div>
+                                        </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group mandatory">
                                                 <label for="umur_saksi1" class="form-label">Umur</label>
@@ -478,7 +489,12 @@ include '../Controller/queryData.php';
                                                 <input type="text" id="nama_saksi2" class="form-control" placeholder="Nama Lengkap" name="nama_saksi2" data-parsley-required="true">
                                             </div>
                                         </div>
-
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group mandatory">
+                                                <label for="tanggal_lahir_saksi2" class="form-label">Tanggal Lahir</label>
+                                                <input type="date" id="tanggal_lahir_saksi2" class="form-control" placeholder="Umur" name="tanggal_lahir_saksi2" data-parsley-required="true" required>
+                                            </div>
+                                        </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group mandatory">
                                                 <label for="umur_saksi2" class="form-label">Umur</label>

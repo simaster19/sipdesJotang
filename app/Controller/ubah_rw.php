@@ -57,5 +57,5 @@ if (isset($_POST['submit'])) {
         ");
 
 
-    header('location:../Administrator/?page=data-rt&pesan=update');
+    header('location:../Administrator/?page=data-rw&pesan=update');
 }

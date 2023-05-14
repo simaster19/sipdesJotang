@@ -58,7 +58,13 @@ function querySuratKelahiran()
     global $koneksi;
 
 
-    $qTampil = mysqli_query($koneksi, "SELECT surat_kelahiran.id as ids, surat_kelahiran.*, surats.*, desa.*, pegawai.* FROM surat_kelahiran LEFT JOIN surats ON surat_kelahiran.id_surat = surats.id LEFT JOIN desa ON surat_kelahiran.id_profil_desa = desa.id LEFT JOIN pegawai ON surat_kelahiran.id_pegawai = pegawai.id ");
+    $qTampil = mysqli_query($koneksi, "SELECT surat_kelahiran.id as ids, surat_kelahiran.*, surats.*, desa.*, pegawai.*, ayah.*, ibu.*, pelapor.* FROM surat_kelahiran LEFT JOIN surats ON surat_kelahiran.id_surat = surats.id 
+    LEFT JOIN desa ON surat_kelahiran.id_profil_desa = desa.id 
+    LEFT JOIN pegawai ON surat_kelahiran.id_pegawai = pegawai.id
+    LEFT JOIN ayah ON surat_kelahiran.id_ayah = ayah.id
+    LEFT JOIN ibu ON surat_kelahiran.id_ibu = ibu.id
+    LEFT JOIN pelapor ON surat_kelahiran.id_pelapor = pelapor.id
+    ");
 
     $rows = [];
     if ($qTampil->num_rows > 0) {

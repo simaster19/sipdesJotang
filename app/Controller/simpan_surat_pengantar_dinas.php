@@ -18,6 +18,8 @@ if (isset($_POST['submit'])) {
     $jumlah = $_POST['jumlah'];
     $keterangan = $_POST['keterangan'];
 
+    $created_at = date('Y-m-d', time());
+
 
 
     $simpan = mysqli_query($koneksi, "INSERT INTO surat_pengantar_dinas (
@@ -26,13 +28,15 @@ if (isset($_POST['submit'])) {
         id_surat,
         uraian,
         jumlah,
-        keterangan) VALUES (
+        keterangan,
+        created_at) VALUES (
             '$id_user',
             '$id_profil_desa',
             '$id_surat',
             '$uraian',
             '$jumlah',
-            '$keterangan')");
+            '$keterangan',
+            '$created_at')");
 
     header('location:../Administrator/?page=surat-menyurat&pesan=berhasil');
 }

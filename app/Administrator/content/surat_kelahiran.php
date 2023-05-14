@@ -52,6 +52,9 @@ include '../Controller/queryData.php';
                         $suratKelahiran = querySuratKelahiran();
 
                         foreach ($suratKelahiran as $data) {
+                            echo "<pre>";
+                            var_dump($data);
+                            echo "</pre>";
                         ?>
                             <tr>
                                 <td><?= $data['no_surat'] ?></td>
