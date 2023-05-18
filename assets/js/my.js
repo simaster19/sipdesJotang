@@ -15,6 +15,35 @@ $(document).ready(function () {
     }
   });
 
+  let inputIndex = 0;
+  $(".tambah-anggota").on("click", function (e) {
+    let input = `<div class="row" id="hapusx" data-index="${inputIndex}">
+    <div class="col-md-5 col-12">
+        <div class="form-group">
+            <input type="number" min="1" id="nik_anggota" class="form-control" placeholder="NIK" name="nik_anggota[]" data-parsley-required="true">
+        </div>
+    </div>
+    <div class="col-md-5 col-12">
+        <div class="form-group">
+            <input type="text" id="nama_anggota" class="form-control" placeholder="Nama Lengkap" name="nama_anggota[]" data-parsley-required="true">
+        </div>
+    </div>
+</div>`;
+
+    $(".input-anggota").append(input);
+    inputIndex++;
+  });
+
+  $(".hapus-anggota").on("click", function (e) {
+    e.preventDefault();
+    if (inputIndex > 0) {
+      $(
+        ".input-anggota #hapusx[data-index='" + (inputIndex - 1) + "']"
+      ).remove();
+      inputIndex--;
+    }
+  });
+
   $(".surats").on("change", function (e) {
     e.preventDefault();
 

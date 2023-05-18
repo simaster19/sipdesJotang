@@ -14,6 +14,7 @@ if (isset($_POST['submit'])) {
     $id_user = $data['id'];
     $id_profil_desa = 1;
 
+    $ids                = $_POST['ids'];
     $nik                = $_POST['nik'];
     $nama               = $_POST['nama'];
     $no_kk              = $_POST['no_kk'];
@@ -34,55 +35,28 @@ if (isset($_POST['submit'])) {
     $keterangan         = $_POST['keterangan'];
 
     $ambil = 'PENDING';
-    $created_at = date('Y-m-d', time());
+    $updated_at = date('Y-m-d', time());
 
-    $simpan = mysqli_query($koneksi, "INSERT INTO surat_pengantar_warga (
-        id_pegawai,
-        id_profil_desa,
-        id_surat,
-        nik,
-        nama,
-        no_kk,
-        tempat_lahir,
-        tanggal_lahir,
-        kewarganegaraan,
-        agama,
-        pekerjaan,
-        alamat,
-        rt,
-        rw,
-        desa,
-        kecamatan,
-        kota,
-        keperluan,
-        berlaku_tgl,
-        berakhir_tgl,
-        keterangan,
-        ambil,
-        created_at) VALUES (
-            '$id_user',
-            '$id_profil_desa',
-            '$id_surat',
-            '$nik',
-            '$nama',
-            '$no_kk',
-            '$tempat_lahir',
-            '$tanggal_lahir',
-            '$kewarganegaraan',
-            '$agama',
-            '$pekerjaan',
-            '$alamat',
-            '$rt',
-            '$rw',
-            '$desa',
-            '$kecamatan',
-            '$kota',
-            '$keperluan',
-            '$berlaku_tgl',
-            '$berakhir_tgl',
-            '$keterangan',
-            '$ambil',
-            '$created_at')");
+    $simpan = mysqli_query($koneksi, "UPDATE surat_pengantar_warga SET 
+        nik='$nik',
+        nama='$nama',
+        no_kk='$no_kk',
+        tempat_lahir='$tempat_lahir',
+        tanggal_lahir='$tanggal_lahir',
+        kewarganegaraan='$kewarganegaraan',
+        agama='$agama',
+        pekerjaan='$pekerjaan',
+        alamat='$alamat',
+        rt='$rt',
+        rw='$rw',
+        desa='$desa',
+        kecamatan='$kecamatan',
+        kota='$kota',
+        keperluan='$keperluan',
+        berlaku_tgl='$berlaku_tgl',
+        berakhir_tgl='$berakhir_tgl',
+        keterangan='$keterangan',
+        updated_at='$updated_at' WHERE id='$ids'");
 
-    header('location:../Administrator/?page=surat-menyurat&pesan=berhasil');
+    header('location:../Administrator/?page=surat-pengantar-warga&pesan=update');
 }

@@ -41,6 +41,8 @@ function queryRw()
 }
 
 
+
+
 function querySurats()
 {
     global $koneksi;
@@ -58,12 +60,13 @@ function querySuratKelahiran()
     global $koneksi;
 
 
-    $qTampil = mysqli_query($koneksi, "SELECT surat_kelahiran.id as ids, surat_kelahiran.*, surats.*, desa.*, pegawai.*, ayah.*, ibu.*, pelapor.* FROM surat_kelahiran LEFT JOIN surats ON surat_kelahiran.id_surat = surats.id 
+    $qTampil = mysqli_query($koneksi, "SELECT surat_kelahiran.id as ids, surat_kelahiran.*, surats.*, desa.*, pegawai.id, pegawai.nama, ayah.*, ibu.*, pelapor.* FROM surat_kelahiran 
+    LEFT JOIN surats ON surat_kelahiran.id_surat = surats.id 
     LEFT JOIN desa ON surat_kelahiran.id_profil_desa = desa.id 
     LEFT JOIN pegawai ON surat_kelahiran.id_pegawai = pegawai.id
-    LEFT JOIN ayah ON surat_kelahiran.id_ayah = ayah.id
-    LEFT JOIN ibu ON surat_kelahiran.id_ibu = ibu.id
-    LEFT JOIN pelapor ON surat_kelahiran.id_pelapor = pelapor.id
+    LEFT JOIN ayah ON surat_kelahiran.id_ayah = ayah.id_ayah
+    LEFT JOIN ibu ON surat_kelahiran.id_ibu = ibu.id_ibu
+    LEFT JOIN pelapor ON surat_kelahiran.id_pelapor = pelapor.id_pelapor
     ");
 
     $rows = [];
@@ -82,7 +85,14 @@ function querySuratKematian()
     global $koneksi;
 
 
-    $qTampil = mysqli_query($koneksi, "SELECT surat_kematian.id as ids, surat_kematian.*, surats.*, desa.*, pegawai.* FROM surat_kematian LEFT JOIN surats ON surat_kematian.id_surat = surats.id LEFT JOIN desa ON surat_kematian.id_profil_desa = desa.id LEFT JOIN pegawai ON surat_kematian.id_pegawai = pegawai.id ");
+    $qTampil = mysqli_query($koneksi, "SELECT surat_kematian.id as ids, surat_kematian.*, surats.*, desa.*, pegawai.id, pegawai.nama, ayah.*, ibu.*, pelapor.* FROM surat_kematian 
+    LEFT JOIN surats ON surat_kematian.id_surat = surats.id 
+    LEFT JOIN desa ON surat_kematian.id_profil_desa = desa.id 
+    LEFT JOIN pegawai ON surat_kematian.id_pegawai = pegawai.id
+    LEFT JOIN ayah ON surat_kematian.id_ayah = ayah.id_ayah
+    LEFT JOIN ibu ON surat_kematian.id_ibu = ibu.id_ibu
+    LEFT JOIN pelapor ON surat_kematian.id_pelapor = pelapor.id_pelapor
+    ");
 
     $rows = [];
     if ($qTampil->num_rows > 0) {
@@ -99,7 +109,9 @@ function querySuratPengantarWarga()
     global $koneksi;
 
 
-    $qTampil = mysqli_query($koneksi, "SELECT surat_pengantar_warga.id as ids, surat_pengantar_warga.*, surats.*, desa.*, pegawai.* FROM surat_pengantar_warga LEFT JOIN surats ON surat_pengantar_warga.id_surat = surats.id LEFT JOIN desa ON surat_pengantar_warga.id_profil_desa = desa.id LEFT JOIN pegawai ON surat_pengantar_warga.id_pegawai = pegawai.id ");
+    $qTampil = mysqli_query($koneksi, "SELECT surat_pengantar_warga.*, surat_pengantar_warga.id as ids, surat_pengantar_warga.nama as nama_lengkap, surats.id, surats.nama_surat, surats.no_surat FROM surat_pengantar_warga 
+    LEFT JOIN surats ON surat_pengantar_warga.id_surat = surats.id 
+    ");
 
     $rows = [];
     if ($qTampil->num_rows > 0) {
@@ -116,7 +128,9 @@ function querySuratPengantarDinas()
     global $koneksi;
 
 
-    $qTampil = mysqli_query($koneksi, "SELECT surat_pengantar_dinas.id as ids, surat_pengantar_dinas.*, surats.*, desa.*, pegawai.* FROM surat_pengantar_dinas LEFT JOIN surats ON surat_pengantar_dinas.id_surat = surats.id LEFT JOIN desa ON surat_pengantar_dinas.id_profil_desa = desa.id LEFT JOIN pegawai ON surat_pengantar_dinas.id_pegawai = pegawai.id ");
+    $qTampil = mysqli_query($koneksi, "SELECT surat_pengantar_dinas.id as ids, surat_pengantar_dinas.*, surats.* FROM surat_pengantar_dinas 
+    LEFT JOIN surats ON surat_pengantar_dinas.id_surat = surats.id 
+    ");
 
     $rows = [];
     if ($qTampil->num_rows > 0) {

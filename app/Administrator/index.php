@@ -103,22 +103,11 @@ include 'layouts/header.php';
                                 <span>Surat Menyurat</span>
                             </a>
                         </li>
-                        <li class="sidebar-item has-sub">
-                            <a href="#" class='sidebar-link'>
-                                <i class="bi bi-gear-fill"></i>
-                                <span>Pengaturan</span>
+                        <li class="sidebar-item ">
+                            <a href="" class='sidebar-link'>
+                                <i class="bi bi-people-fill"></i>
+                                <span>Organisasi Pegawai</span>
                             </a>
-                            <ul class="submenu">
-                                <li class="submenu-item ">
-                                    <a href="component-alert.html">Organisasi Pegawai</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="component-badge.html">Ketua RT</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="component-breadcrumb.html">Ketua RW</a>
-                                </li>
-                            </ul>
                         </li>
                         <li class="sidebar-item ">
                             <a href="../Controller/logout.php" class='sidebar-link'>

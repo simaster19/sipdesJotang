@@ -17,4 +17,5 @@
     <link rel="stylesheet" href="../../assets/extensions/simple-datatables/style.css">
     <link rel="stylesheet" href="../../assets/css/pages/simple-datatables.css">
 
+
 </head>
