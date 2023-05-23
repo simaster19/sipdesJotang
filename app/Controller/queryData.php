@@ -53,6 +53,29 @@ function querySurats()
     return $rows;
 }
 
+function printSuratKelahiran($id)
+{
+    global $koneksi;
+
+
+    $qTampil = mysqli_query($koneksi, "SELECT surat_kelahiran.id as ids, surat_kelahiran.*, surats.*, desa.*, pegawai.id, pegawai.nama,pegawai.jabatan, ayah.*, ibu.*, pelapor.* FROM surat_kelahiran 
+    LEFT JOIN surats ON surat_kelahiran.id_surat = surats.id 
+    LEFT JOIN desa ON surat_kelahiran.id_profil_desa = desa.id 
+    LEFT JOIN pegawai ON surat_kelahiran.id_pegawai = pegawai.id
+    LEFT JOIN ayah ON surat_kelahiran.id_ayah = ayah.id_ayah 
+    LEFT JOIN ibu ON surat_kelahiran.id_ibu = ibu.id_ibu
+    LEFT JOIN pelapor ON surat_kelahiran.id_pelapor = pelapor.id_pelapor WHERE surat_kelahiran.id = '$id'
+    ");
+
+    $rows = [];
+    if ($qTampil->num_rows > 0) {
+        foreach ($qTampil as $data) {
+            $rows[] = $data;
+        }
+    }
+
+    return $rows;
+}
 
 
 function querySuratKelahiran()
@@ -130,6 +153,26 @@ function querySuratPengantarDinas()
 
     $qTampil = mysqli_query($koneksi, "SELECT surat_pengantar_dinas.id as ids, surat_pengantar_dinas.*, surats.* FROM surat_pengantar_dinas 
     LEFT JOIN surats ON surat_pengantar_dinas.id_surat = surats.id 
+    ");
+
+    $rows = [];
+    if ($qTampil->num_rows > 0) {
+        foreach ($qTampil as $data) {
+            $rows[] = $data;
+        }
+    }
+
+    return $rows;
+}
+
+function querySuratPindah()
+{
+    global $koneksi;
+
+
+    $qTampil = mysqli_query($koneksi, "SELECT surat_pindah.id as ids, surat_pindah.*, surats.* FROM surat_pindah 
+    LEFT JOIN surats ON surat_pindah.id_surat = surats.id 
+
     ");
 
     $rows = [];

@@ -67,7 +67,7 @@ include '../Controller/queryData.php';
                                 <td>
                                     <button data-bs-toggle="modal" data-bs-target="#ubahSuratPengantarWarga<?= $data['ids'] ?>" title="Ubah" class="btn-ubahPegawai btn btn-primary rounded-pill"><i class="bi bi-pencil-fill"></i></button>
                                     <a href=""><button type="submit" title="Print" class="btn btn-danger rounded-pill"><i class="bi bi-printer-fill"></i></button></a>
-                                    <a href=""><button type="submit" title="Konfirmasi Pengambilan" class="btn btn-success rounded-pill"><i class="bi bi-check"></i></button></a>
+                                    <a href="../Controller/konfirmasi_surat_pengantar_warga.php?id=<?= $data['ids'] ?>"><button type="submit" title="Konfirmasi Pengambilan" class="btn btn-success rounded-pill"><i class="bi bi-check"></i></button></a>
 
 
 
@@ -92,7 +92,7 @@ include '../Controller/queryData.php';
                                                                 <div class="col-md-6 col-12">
                                                                     <div class="form-group mandatory">
                                                                         <label for="nik" class="form-label">NIK</label>
-                                                                        <input type="number" id="nik" class="form-control" placeholder="Masukkan NIK" name="nik" data-parsley-required="true" value="<?= $data['nik'] ?>" required>
+                                                                        <input type="number" id="nik" class="form-control" placeholder="Masukkan NIK" name="nik" data-parsley-required="true" value="<?= $data['nik'] ?>" required readonly>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6 col-12">
@@ -177,7 +177,7 @@ include '../Controller/queryData.php';
                                                                 <div class="col-md-6 col-12">
                                                                     <div class="form-group mandatory">
                                                                         <label for="keperluan" class="form-label">Keperluan</label>
-                                                                        <input type="text" id="keperluan" class="form-control" placeholder="Masukkan Dusun" name="keperluan" value="<?= $data['keperluan'] ?>" data-parsley-required="true">
+                                                                        <input type="text" id="keperluan" class="form-control" placeholder="Keperluan" name="keperluan" value="<?= $data['keperluan'] ?>" data-parsley-required="true">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-3 col-12">
