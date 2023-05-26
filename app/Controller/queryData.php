@@ -77,6 +77,70 @@ function printSuratKelahiran($id)
     return $rows;
 }
 
+function printSuratKematian($id)
+{
+    global $koneksi;
+
+
+    $qTampil = mysqli_query($koneksi, "SELECT surat_kematian.id as ids, surat_kematian.*, surats.*, desa.*, pegawai.id, pegawai.nama,pegawai.jabatan, ayah.*, ibu.*, pelapor.* FROM surat_kematian 
+    LEFT JOIN surats ON surat_kematian.id_surat = surats.id 
+    LEFT JOIN desa ON surat_kematian.id_profil_desa = desa.id 
+    LEFT JOIN pegawai ON surat_kematian.id_pegawai = pegawai.id
+    LEFT JOIN ayah ON surat_kematian.id_ayah = ayah.id_ayah 
+    LEFT JOIN ibu ON surat_kematian.id_ibu = ibu.id_ibu
+    LEFT JOIN pelapor ON surat_kematian.id_pelapor = pelapor.id_pelapor WHERE surat_kematian.id = '$id'
+    ");
+
+    $rows = [];
+    if ($qTampil->num_rows > 0) {
+        foreach ($qTampil as $data) {
+            $rows[] = $data;
+        }
+    }
+
+    return $rows;
+}
+
+function printSuratPengantarWarga($id)
+{
+    global $koneksi;
+
+
+    $qTampil = mysqli_query($koneksi, "SELECT surat_pengantar_warga.*, surat_pengantar_warga.id as ids, surat_pengantar_warga.nama as nama_lengkap, surats.id, desa.*, surats.nama_surat, surats.no_surat FROM surat_pengantar_warga 
+    LEFT JOIN surats ON surat_pengantar_warga.id_surat = surats.id 
+    LEFT JOIN desa ON surat_pengantar_warga.id_profil_desa = desa.id WHERE surat_pengantar_warga.id='$id'
+    ");
+
+    $rows = [];
+    if ($qTampil->num_rows > 0) {
+        foreach ($qTampil as $data) {
+            $rows[] = $data;
+        }
+    }
+
+    return $rows;
+}
+
+function printSuratPengantarDinas($id)
+{
+    global $koneksi;
+
+
+    $qTampil = mysqli_query($koneksi, "SELECT surat_pengantar_dinas.*, surat_pengantar_dinas.id as ids, surats.id, desa.*, surats.nama_surat, surats.no_surat FROM surat_pengantar_dinas 
+    LEFT JOIN surats ON surat_pengantar_dinas.id_surat = surats.id 
+    LEFT JOIN desa ON surat_pengantar_dinas.id_profil_desa = desa.id WHERE surat_pengantar_dinas.id='$id'
+    ");
+
+    $rows = [];
+    if ($qTampil->num_rows > 0) {
+        foreach ($qTampil as $data) {
+            $rows[] = $data;
+        }
+    }
+
+    return $rows;
+}
+
 
 function querySuratKelahiran()
 {
