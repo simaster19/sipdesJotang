@@ -4,7 +4,7 @@ if (isset($_POST['submit'])) {
     $id = $_POST['id'];
     $nik = $_POST['nik'];
     $nama = $_POST['nama'];
-    $jabatan = $_POST['jabatan'];
+    $jabatan = strtoupper($_POST['jabatan']);
     $status = $_POST['status'];
 
     $namaFoto = $_FILES['foto']['name'];

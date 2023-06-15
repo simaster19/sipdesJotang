@@ -1,5 +1,12 @@
 <?php
 error_reporting(0);
+include '../Controller/queryData.php';
+
+$surats = countDataSurat();
+$pegawai = countDataPegawai();
+$rt = queryRt();
+$rw = queryRw();
+
 
 ?>
 
@@ -22,7 +29,7 @@ error_reporting(0);
                                 </div>
                                 <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                                     <h6 class="text-muted font-semibold">Data Pegawai</h6>
-                                    <h6 class="font-extrabold mb-0">3</h6>
+                                    <h6 class="font-extrabold mb-0"><?= $pegawai !== null ? count($pegawai) : 0 ?></h6>
                                 </div>
                             </div>
                         </div>
@@ -39,7 +46,7 @@ error_reporting(0);
                                 </div>
                                 <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                                     <h6 class="text-muted font-semibold">Data Surat</h6>
-                                    <h6 class="font-extrabold mb-0">5</h6>
+                                    <h6 class="font-extrabold mb-0"><?= $surats !== null ? count($surats) : 0 ?></h6>
                                 </div>
                             </div>
                         </div>
@@ -55,8 +62,8 @@ error_reporting(0);
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                    <h6 class="text-muted font-semibold">Total RT</h6>
-                                    <h6 class="font-extrabold mb-0">6</h6>
+                                    <h6 class="text-muted font-semibold">Data RT</h6>
+                                    <h6 class="font-extrabold mb-0"><?= $rt !== null ? count($rt) : 0 ?></h6>
                                 </div>
                             </div>
                         </div>
@@ -72,8 +79,8 @@ error_reporting(0);
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                    <h6 class="text-muted font-semibold">Total RW</h6>
-                                    <h6 class="font-extrabold mb-0">6</h6>
+                                    <h6 class="text-muted font-semibold">Data RW</h6>
+                                    <h6 class="font-extrabold mb-0"><?= $rw !== null ? count($rw) : 0 ?></h6>
                                 </div>
                             </div>
                         </div>
@@ -84,8 +91,6 @@ error_reporting(0);
 
         <div class="col-12 col-lg-11">
             <div class="row">
-
-
                 <div class="col-6 col-lg-3 col-md-6">
                     <div class="card">
                         <div class="card-body px-4 py-4-5">
@@ -97,9 +102,9 @@ error_reporting(0);
                 </div>
                 <div class="col-6 col-lg-9 col-md-6">
                     <div class="page-heading">
-                        <h3>PROFILE</h3>
+                        <h3>TENTANG</h3>
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto sunt voluptas doloremque sed est alias quo rerum iste ipsam delectus libero at vero, quibusdam quia dolorum dolore doloribus ipsa voluptatibus.lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam placeat, sit doloribus quas eligendi voluptas ad explicabo eum dolore perspiciatis? Quaerat totam architecto in consequuntur voluptatibus laudantium dicta autem itaque!</p>
+                    <p>Web Aplikasi untuk pelayanan surat administrasi desa untuk pembuatan surat administrasi desa secara online.</p>
                 </div>
             </div>
         </div>

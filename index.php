@@ -21,30 +21,36 @@ session_start();
     <div class="row h-100">
       <div class="col-lg-5 col-12">
         <div id="auth-left">
-          <div class="auth-logo">
-            <a href="index.html"><img src="assets/images/logo/logo.svg" alt="Logo"></a>
+          <div class="text-center">
+            <a href="./"><img src="assets/images/logo/logo2.png" alt="Logo">
+              <h3 class="d-inline-block mb-3">SIPDES-JOTANG</h3>
+            </a>
           </div>
-          <h1 class="auth-title">Log in.</h1>
+
           <form action="app/Controller/proccess_login.php" method="POST">
             <div class="form-group position-relative has-icon-left mb-4">
-              <input type="text" class="form-control form-control-xl" placeholder="Username" name="username" id="username">
+              <input type="text" class="form-control form-control-md" placeholder="Username" name="username" id="username">
               <div class="form-control-icon">
                 <i class="bi bi-person"></i>
               </div>
             </div>
             <div class="form-group position-relative has-icon-left mb-4">
-              <input type="password" class="form-control form-control-xl" placeholder="Password" name="password" id="password">
+              <input type="password" class="form-control form-control-md" placeholder="Password" name="password" id="password">
               <div class="form-control-icon">
                 <i class="bi bi-shield-lock"></i>
               </div>
             </div>
-            <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5" type="submit" name="tb_login">Log in</button>
+            <button class="btn btn-primary btn-block btn-md shadow-lg mt-5" type="submit" name="tb_login">Log in</button>
           </form>
         </div>
       </div>
       <div class="col-lg-7 d-none d-lg-block">
         <div id="auth-right">
+          <!-- <div class="container-lg">
 
+            <h1 class="text-white">PROFIL DESA</h1>
+            <p class="text-black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam corrupti aut delectus nulla ad voluptates suscipit quaerat dolor quia maiores culpa, consectetur ipsum vel eos? Est recusandae atque ratione quae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, eum. Error ipsa sint neque, minima modi perspiciatis ex fuga assumenda earum sed autem odit molestias quaerat saepe sapiente. Veniam, corrupti. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere sit pariatur officia, incidunt eveniet, iure recusandae eligendi, perferendis amet eum eius ratione omnis aperiam at fuga accusamus aliquid voluptate ducimus! </p>
+          </div> -->
         </div>
       </div>
     </div>

@@ -33,6 +33,7 @@ $datas = printSuratKematian($id);
             width: 100%;
             font-size: 11pt;
             text-align: left;
+            border: 2px solid black;
         }
 
         #customers3 {
@@ -61,18 +62,18 @@ $datas = printSuratKematian($id);
             <tr>
                 <th>Pemerintah Desa/kelurahan</th>
                 <th>:</th>
-                <td><?= $data['nama_desa'] ?></td>
+                <td><?= strtoupper($data['nama_desa']) ?></td>
             </tr>
             <tr>
                 <th>Kecamatan</th>
                 <th>:</th>
-                <td><?= $data['kecamatan'] ?></td>
+                <td><?= strtoupper($data['kecamatan']) ?></td>
             </tr>
             </tr>
             <tr>
                 <th>Kota</th>
                 <th>:</th>
-                <td><?= $data['kota'] ?></td>
+                <td><?= strtoupper($data['kota']) ?></td>
             </tr>
             <tr>
                 <th>Kode Wilayah</th>
@@ -81,7 +82,7 @@ $datas = printSuratKematian($id);
             </tr>
     </table>
 
-    <h3 class="sub-title">SURAT KETERANGAN KEMATIAN</h3>
+    <h3 class="sub-title" style="text-decoration: underline; margin-bottom:1rem;">SURAT KETERANGAN KEMATIAN</h3>
     <table id="customers">
         <tr>
             <th>Nama Kepala Keluarga</th>
@@ -96,7 +97,7 @@ $datas = printSuratKematian($id);
     </table>
     <table id="customers2">
         <tr>
-            <th colspan="3" class="sub-title">JENAZAH</th>
+            <th colspan="3" class="sub-title" style="text-decoration: underline;">JENAZAH</th>
         </tr>
         <tr>
             <th>1.</th>
@@ -171,7 +172,12 @@ $datas = printSuratKematian($id);
             <td><?= $data['sebab_kematian'] ?></td>
         </tr>
         <tr>
-            <th colspan="3" class="sub-title">IBU</th>
+            <td colspan="4">
+                <hr style="border: 1px solid black;">
+            </td>
+        </tr>
+        <tr>
+            <th colspan="3" class="sub-title" style="text-decoration: underline;">IBU</th>
         </tr>
         <tr>
             <th>1.</th>
@@ -204,7 +210,12 @@ $datas = printSuratKematian($id);
             <td><?= $data['alamat_ibu'] ?> , RT/RW: <?= $data['rt_ibu'] ?>/<?= $data['rw_ibu'] ?> , Desa: <?= $data['desa_ibu'] ?> , Kec: <?= $data['kecamatan_ibu'] ?> , Kota: <?= $data['kota_ibu'] ?></td>
         </tr>
         <tr>
-            <th colspan="3" class="sub-title">AYAH</th>
+            <td colspan="4">
+                <hr style="border: 1px solid black;">
+            </td>
+        </tr>
+        <tr>
+            <th colspan="3" class="sub-title" style="text-decoration: underline;">AYAH</th>
         </tr>
         <tr>
             <th>1.</th>
@@ -237,7 +248,12 @@ $datas = printSuratKematian($id);
             <td><?= $data['alamat_ayah'] ?> , RT/RW: <?= $data['rt_ayah'] ?>/<?= $data['rw_ayah'] ?> , Desa: <?= $data['desa_ayah'] ?> , Kec: <?= $data['kecamatan_ayah'] ?> , Kota: <?= $data['kota_ayah'] ?></td>
         </tr>
         <tr>
-            <th colspan="3" class="sub-title">PELAPOR</th>
+            <td colspan="4">
+                <hr style="border: 1px solid black;">
+            </td>
+        </tr>
+        <tr>
+            <th colspan="3" class="sub-title" style="text-decoration: underline;">PELAPOR</th>
         </tr>
         <tr>
             <th>1.</th>
@@ -269,13 +285,19 @@ $datas = printSuratKematian($id);
             <th>:</th>
             <td><?= $data['alamat_pelapor'] ?> , RT/RW: <?= $data['rt_pelapor'] ?>/<?= $data['rw_pelapor'] ?> , Desa: <?= $data['desa_pelapor'] ?> , Kec: <?= $data['kecamatan_pelapor'] ?> , Kota: <?= $data['kota_pelapor'] ?></td>
         </tr>
+        <tr>
+            <td colspan="4">
+                <hr style="border: 1px solid black;">
+            </td>
+        </tr>
         <?php
-            $querySaksi = mysqli_query($koneksi, "SELECT * FROM saksi WHERE id_data_surat='$id'");
+            $id_surat = $data['id_surat'];
+            $querySaksi = mysqli_query($koneksi, "SELECT * FROM saksi WHERE id_data_surat='$id' AND id_surat='$id_surat'");
             while ($dataSaksi = mysqli_fetch_assoc($querySaksi)) {
 
         ?>
             <tr>
-                <th colspan="3" class="sub-title">SAKSI <?= $dataSaksi['type_saksi'] ?></th>
+                <th colspan="3" class="sub-title" style="text-decoration: underline;">SAKSI <?= $dataSaksi['type_saksi'] ?></th>
             </tr>
             <tr>
                 <th>1.</th>
@@ -306,6 +328,11 @@ $datas = printSuratKematian($id);
                 <th>Alamat</th>
                 <th>:</th>
                 <td><?= $dataSaksi['alamat_saksi'] ?> , RT/RW: <?= $dataSaksi['rt_saksi'] ?>/<?= $dataSaksi['rw_saksi'] ?> , Desa: <?= $dataSaksi['desa_saksi'] ?> , Kec: <?= $dataSaksi['kecamatan_saksi'] ?> , Kota: <?= $dataSaksi['kota_saksi'] ?></td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <hr style="border: 1px solid black;">
+                </td>
             </tr>
         <?php
             }

@@ -62,7 +62,7 @@ include '../Controller/queryData.php';
                                 <td>
                                     <button data-bs-toggle="modal" data-bs-target="#ubahSuratPengantarDinas<?= $data['ids'] ?>" title="Ubah Surat Pengantar Dinas" class=" btn btn-primary rounded-pill"><i class="bi bi-pencil-fill"></i></button>
 
-                                    <a href="content/print/surat_pengantar_dinas_print.php?id=<?= $data['ids'] ?>"><button type="submit" title="Print" class="btn btn-danger rounded-pill"><i class="bi bi-printer-fill"></i></button></a>
+                                    <a href="content/print/surat_pengantar_dinas_print.php?id=<?= $data['ids'] ?>" target="_blank"><button type="submit" title="Print" class="btn btn-danger rounded-pill"><i class="bi bi-printer-fill"></i></button></a>
 
 
                                     <!-- Modal Ubah Surat Pengantar Dinas -->

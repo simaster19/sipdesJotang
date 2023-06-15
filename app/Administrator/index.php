@@ -1,5 +1,5 @@
 <?php
-//error_reporting(0);
+error_reporting(0);
 session_start();
 if ($_SESSION['lvl'] != 'Administrator') {
     header('location:../../');
@@ -104,7 +104,7 @@ include 'layouts/header.php';
                             </a>
                         </li>
                         <li class="sidebar-item ">
-                            <a href="" class='sidebar-link'>
+                            <a href="?page=organisasi-pegawai" class='sidebar-link'>
                                 <i class="bi bi-people-fill"></i>
                                 <span>Organisasi Pegawai</span>
                             </a>
@@ -134,12 +134,12 @@ include 'layouts/header.php';
                     </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end shadow-lg" aria-labelledby="topbarUserDropdown">
-                    <li><a class="dropdown-item" href="#">My Account</a></li>
-                    <li><a class="dropdown-item" href="#">Settings</a></li>
-                    <li>
+                    <!-- <li><a class="dropdown-item" href="#">My Account</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li> -->
+                    <!-- <li>
                         <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="auth-login.html">Logout</a></li>
+                    </li> -->
+                    <li><a class="dropdown-item" href="./../Controller/logout.php">Logout</a></li>
                 </ul>
             </div>
         </div>

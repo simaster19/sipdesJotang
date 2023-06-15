@@ -25,4 +25,6 @@ if ($page == NULL) {
     include 'content/data_rt.php';
 } elseif ($page == 'data-rw') {
     include 'content/data_rw.php';
+} elseif ($page == 'organisasi-pegawai') {
+    include 'content/organisasi_pegawai.php';
 }

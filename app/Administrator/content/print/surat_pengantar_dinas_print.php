@@ -27,7 +27,7 @@ $datas = printSuratPengantarDinas($id);
 
         .logo {
             float: left;
-            margin-top: 8px;
+            position: absolute;
             margin-left: 5px;
             width: 90px;
             height: 90px;
@@ -103,6 +103,7 @@ $datas = printSuratPengantarDinas($id);
     $i = 1;
     foreach ($datas as $data) {
     ?>
+        <img src="./../../../../assets/images/logo/logo2.png" class="logo" alt="">
         <table class="header">
             <tr>
                 <th>PEMERINTAH <?= $data['kota'] ?></th>

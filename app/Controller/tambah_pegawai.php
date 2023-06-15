@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
 
     $nik = $_POST['nik'];
     $nama = $_POST['nama'];
-    $jabatan = $_POST['jabatan'];
+    $jabatan = strtoupper($_POST['jabatan']);
 
     if (isset($_POST['role']) == true) {
         $username = $_POST['username'];

@@ -141,6 +141,26 @@ function printSuratPengantarDinas($id)
     return $rows;
 }
 
+function printSuratPindah($id)
+{
+    global $koneksi;
+
+
+    $qTampil = mysqli_query($koneksi, "SELECT surat_pindah.*, surat_pindah.id as ids, surats.id, desa.*, surats.nama_surat, surats.no_surat FROM surat_pindah 
+    LEFT JOIN surats ON surat_pindah.id_surat = surats.id 
+    LEFT JOIN desa ON surat_pindah.id_profil_desa = desa.id WHERE surat_pindah.id='$id'
+    ");
+
+    $rows = [];
+    if ($qTampil->num_rows > 0) {
+        foreach ($qTampil as $data) {
+            $rows[] = $data;
+        }
+    }
+
+    return $rows;
+}
+
 
 function querySuratKelahiran()
 {
@@ -238,6 +258,45 @@ function querySuratPindah()
     LEFT JOIN surats ON surat_pindah.id_surat = surats.id 
 
     ");
+
+    $rows = [];
+    if ($qTampil->num_rows > 0) {
+        foreach ($qTampil as $data) {
+            $rows[] = $data;
+        }
+    }
+
+    return $rows;
+}
+
+
+//Dashboard
+function countDataPegawai()
+{
+    global $koneksi;
+    $qTampil = mysqli_query($koneksi, "SELECT * FROM pegawai");
+
+    $rows = [];
+
+    foreach ($qTampil as $data) {
+        $rows[] = $data;
+    }
+
+
+    return $rows;
+}
+
+function countDataSurat()
+{
+    global $koneksi;
+
+    $qTampil = mysqli_query($koneksi, "SELECT surats.id as ids ,surat_kelahiran.*,surat_kematian.*,surat_pengantar_dinas.*, surat_pengantar_warga.*, surat_pindah.* FROM surats
+    LEFT JOIN surat_kelahiran ON surats.id = surat_kelahiran.id_surat
+    LEFT JOIN surat_kematian ON surats.id = surat_kematian.id_surat
+    LEFT JOIN surat_pengantar_dinas ON surats.id = surat_pengantar_dinas.id_surat
+    LEFT JOIN surat_pengantar_warga ON surats.id = surat_pengantar_warga.id_surat
+    LEFT JOIN surat_pindah ON surats.id = surat_pindah.id_surat");
+
 
     $rows = [];
     if ($qTampil->num_rows > 0) {

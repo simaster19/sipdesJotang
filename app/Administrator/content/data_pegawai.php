@@ -41,25 +41,25 @@ include '../Controller/queryData.php';
                                         <div class="col-md-6 col-12">
                                             <div class="form-group mandatory">
                                                 <label for="foto" class="form-label">Foto</label>
-                                                <input type="file" id="foto" class="form-control" name="foto" data-parsley-required="true">
+                                                <input type="file" id="foto" class="form-control" name="foto" data-parsley-required="true" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group mandatory">
                                                 <label for="nik" class="form-label">NIK</label>
-                                                <input type="text" id="nik" class="form-control" placeholder="NIK" name="nik" data-parsley-required="true">
+                                                <input type="number" id="nik" class="form-control" placeholder="NIK" name="nik" data-parsley-required="true" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group mandatory">
                                                 <label for="nama" class="form-label">Nama</label>
-                                                <input type="text" id="nama" class="form-control" placeholder="Nama Lengkap" name="nama" data-parsley-required="true">
+                                                <input type="text" id="nama" class="form-control" placeholder="Nama Lengkap" name="nama" data-parsley-required="true" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group mandatory">
                                                 <label for="jabatan" class="form-label">Jabatan</label>
-                                                <input type="text" id="jabatan" class="form-control" placeholder="Jabatan" name="jabatan" data-parsley-required="true">
+                                                <input type="text" id="jabatan" class="form-control" placeholder="Jabatan" name="jabatan" data-parsley-required="true" required>
                                             </div>
                                         </div>
                                         <div class="col-md-12 col-12">
@@ -147,8 +147,14 @@ include '../Controller/queryData.php';
                                 <td><?= $pegawai['nik'] ?></td>
                                 <td><?= $pegawai['nama'] ?></td>
                                 <td><?= $pegawai['jabatan'] ?></td>
-                                <td><?= $pegawai['status'] == 1 ? 'Active' : 'Non-Active' ?></td>
-                                <td><?= $pegawai['role'] ?></td>
+                                <td><?= $pegawai['status'] == 1 ? '<span class="badge bg-success">Active</span>' :  '<span class="badge bg-danger">Non-Active</span>' ?></td>
+                                <?php
+                                if ($pegawai['role'] == 'ADMIN') {
+                                    echo '<td><span class="badge bg-info">' . $pegawai['role'] . '</span></td>';
+                                } else {
+                                    echo '<td><span class="badge bg-warning">' . $pegawai['role'] . '</span></td>';
+                                }
+                                ?>
                                 <td>
                                     <button data-bs-toggle="modal" data-bs-target="#ubahPegawai<?= $pegawai['id'] ?>" title="Ubah Pegawai" class="btn-ubahPegawai btn btn-primary rounded-pill"><i class="bi bi-pencil-fill"></i></button>
 
@@ -197,7 +203,9 @@ include '../Controller/queryData.php';
                                                             <tr>
                                                                 <td>Status</td>
                                                                 <td>:</td>
-                                                                <td><?= $pegawai['status'] == 1 ? 'Active' : 'Non-Aktif' ?></td>
+
+                                                                <td><?= $pegawai['status'] == 1 ? '<span class="badge bg-success">Active</span>' :  '<span class="badge bg-danger">Non-Active</span>' ?>
+                                                                </td>
                                                             </tr>
                                                             <?php
                                                             if ($pegawai['role'] == 'ADMIN') {
@@ -205,7 +213,7 @@ include '../Controller/queryData.php';
                                                                 <tr>
                                                                     <td>Hak Akses</td>
                                                                     <td>:</td>
-                                                                    <td><?= $pegawai['role'] ?></td>
+                                                                    <td><span class="badge bg-info"><?= $pegawai['role'] ?></span></td>
                                                                 </tr>
                                                             <?php }
                                                             ?>
@@ -249,19 +257,19 @@ include '../Controller/queryData.php';
                                                             <div class="col-md-6 col-12">
                                                                 <div class="form-group mandatory">
                                                                     <label for="nik" class="form-label">NIK</label>
-                                                                    <input type="text" id="nik" class="form-control" placeholder="NIK" name="nik" data-parsley-required="true" value="<?= $pegawai['nik'] ?>">
+                                                                    <input type="number" id="nik" class="form-control" placeholder="NIK" name="nik" data-parsley-required="true" value="<?= $pegawai['nik'] ?>" required>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-12">
                                                                 <div class="form-group mandatory">
                                                                     <label for="nama" class="form-label">Nama</label>
-                                                                    <input type="text" id="nama" class="form-control" placeholder="Nama Lengkap" name="nama" data-parsley-required="true" value="<?= $pegawai['nama'] ?>">
+                                                                    <input type="text" id="nama" class="form-control" placeholder="Nama Lengkap" name="nama" data-parsley-required="true" value="<?= $pegawai['nama'] ?>" required>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-12">
                                                                 <div class="form-group mandatory">
                                                                     <label for="jabatan" class="form-label">Jabatan</label>
-                                                                    <input type="text" id="jabatan" class="form-control" placeholder="Jabatan" name="jabatan" data-parsley-required="true" value="<?= $pegawai['jabatan'] ?>">
+                                                                    <input type="text" id="jabatan" class="form-control" placeholder="Jabatan" name="jabatan" data-parsley-required="true" value="<?= $pegawai['jabatan'] ?>" required>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-12">

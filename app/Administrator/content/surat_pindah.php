@@ -53,26 +53,22 @@ include '../Controller/queryData.php';
                         <?php
                         $suratPindah = querySuratPindah();
                         foreach ($suratPindah as $data) {
-                            echo "<pre>";
-                            var_dump($data);
-                            echo "</pre>";
-
-
+                            // echo "<pre>";
+                            // var_dump($data);
+                            // echo "</pre>";
                             $id = $data['ids'];
                         ?>
                             <tr>
-
                                 <td><?= $data['no_surat'] ?></td>
                                 <td><?= $data['nik'] ?></td>
                                 <td><?= $data['nama_pemohon'] ?></td>
                                 <td><?= $data['jenis_permohonan'] ?></td>
                                 <td><?= $data['no_kk'] ?></td>
-                                <td><?= $data['ambil'] ?></td>
+                                <td><?= $data['ambil'] == 'PENDING' ? '<span class="badge bg-warning">' . $data['ambil'] . '</span>' : '<span class="badge bg-success">' . $data['ambil'] . '</span>' ?></td>
                                 <td>
                                     <button data-bs-toggle="modal" data-bs-target="#ubahSuratPindah<?= $data['ids'] ?>" title="Ubah" class="btn-ubahSuratPindah btn btn-primary rounded-pill"><i class="bi bi-pencil-fill"></i></button>
 
-
-                                    <a href=""><button type="submit" title="Print" class="btn btn-danger rounded-pill"><i class="bi bi-printer-fill"></i></button></a>
+                                    <a href="content/print/surat_pindah_print.php?id=<?= $data['ids'] ?>" target="_blank"><button type="submit" title="Print" class="btn btn-danger rounded-pill"><i class="bi bi-printer-fill"></i></button></a>
                                     <a href="../Controller/konfirmasi_surat_pindah.php?id=<?= $data['ids'] ?>"><button type="submit" title="Konfirmasi Pengambilan" class="btn btn-success rounded-pill"><i class="bi bi-check"></i></button></a>
 
 

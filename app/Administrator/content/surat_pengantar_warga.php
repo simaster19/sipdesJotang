@@ -63,10 +63,10 @@ include '../Controller/queryData.php';
                                     <?= $data['nik'] ?>
                                 </td>
                                 <td><?= $data['keperluan'] ?></td>
-                                <td><?= $data['ambil'] ?></td>
+                                <td><?= $data['ambil'] == 'PENDING' ? '<span class="badge bg-warning">' . $data['ambil'] . '</span>' : '<span class="badge bg-success">' . $data['ambil'] . '</span>' ?></td>
                                 <td>
                                     <button data-bs-toggle="modal" data-bs-target="#ubahSuratPengantarWarga<?= $data['ids'] ?>" title="Ubah" class="btn-ubahPegawai btn btn-primary rounded-pill"><i class="bi bi-pencil-fill"></i></button>
-                                    <a href="content/print/surat_pengantar_warga_print.php?id=<?= $data['ids'] ?>"><button type="submit" title="Print" class="btn btn-danger rounded-pill"><i class="bi bi-printer-fill"></i></button></a>
+                                    <a href="content/print/surat_pengantar_warga_print.php?id=<?= $data['ids'] ?>" target="_blank"><button type="submit" title="Print" class="btn btn-danger rounded-pill"><i class="bi bi-printer-fill"></i></button></a>
                                     <a href="../Controller/konfirmasi_surat_pengantar_warga.php?id=<?= $data['ids'] ?>"><button type="submit" title="Konfirmasi Pengambilan" class="btn btn-success rounded-pill"><i class="bi bi-check"></i></button></a>
 
 

@@ -23,38 +23,11 @@ $datas = printSuratPengantarWarga($id);
             font-family: Arial, Helvetica, sans-serif;
         }
 
-        #customers {
-            width: 40%;
-            font-size: 11pt;
-            text-align: left;
-        }
 
-        #customers2 {
-            border-collapse: collapse;
-            width: 100%;
-            font-size: 11pt;
-            text-align: left;
-        }
-
-        #customers3 {
-            border-collapse: collapse;
-            width: 95%;
-            font-size: 11pt;
-
-        }
-
-        h3 {
-            text-align: center;
-            font-weight: bold;
-        }
-
-        .sub-title {
-            padding-top: 0.7rem;
-        }
 
         .logo {
             float: left;
-            margin-top: 8px;
+            position: absolute;
             margin-left: 5px;
             width: 90px;
             height: 90px;
@@ -108,9 +81,10 @@ $datas = printSuratPengantarWarga($id);
         }
 
         .content-surat {
+            padding: 100px;
             border-collapse: collapse;
             width: 90%;
-            text-align: center;
+            text-align: left;
             margin-left: auto;
             margin-right: auto;
             margin-top: 1.2rem;
@@ -121,70 +95,147 @@ $datas = printSuratPengantarWarga($id);
             margin-left: 3rem;
             text-align: left;
         }
+
+        .judul {
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;
+            border-collapse: collapse;
+        }
+
+        .footer {
+            margin-left: auto;
+            margin-right: auto;
+            width: 90%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        .underline {
+            border-bottom: 1px solid black;
+        }
     </style>
 </head>
 
 <body>
     <?php
+    $i = 1;
     foreach ($datas as $data) {
     ?>
+        <img src="./../../../../assets/images/logo/logo2.png" class="logo" alt="">
         <table class="header">
+
             <tr>
-                <th>PEMERINTAH KABUPATEN KENDAL</th>
+                <th>PEMERINTAH <?= strtoupper($data['kota']) ?></th>
             </tr>
             <tr>
-                <th>KECAMATAN KENDAL</th>
+                <th>KECAMATAN <?= strtoupper($data['kecamatan']) ?></th>
             </tr>
             <tr>
-                <th>KELURAHAN JOTANG</th>
+                <th>KELURAHAN <?= strtoupper($data['nama_desa']) ?></th>
             </tr>
             <tr class="sub-header">
                 <td>Gang Janur No.02 RT.02/RW.01 Jotang</td>
             </tr>
         </table>
-        <p class="kode-pos">Kode Pos : 7666</p>
+        <p class="kode-pos">Kode Pos : 51316</p>
         <hr class="hr-bold">
         <hr class="hr-no-bold">
-
-        <div class="tanggal-surat">
-            <p>Kendal, 10 Mei 2023</p>
-            <br>
-            <p>Kepada Yth;</p>
-            <p>CAMAT KENDAL</p>
-            <p>di - <strong>KENDAL</strong></p>
-        </div>
-
-        <h4 style="text-decoration: underline; text-align: center; margin-top:130px;">SURAT PENGANTAR DINAS</h4>
-        <p style="text-align: center;">Nomor : 02030/ /JTG</p>
-
-        <table class="content-surat" border="1px">
+        <h4>KODE WILAYAH : 33.234434.454</h4>
+        <table class="judul">
             <tr>
-                <th>NO</th>
-                <th>URAIAN</th>
-                <th>JUMLAH</th>
-                <th>KETERANGAN</th>
+                <th rowspan="2">SURAT</th>
+                <th class="underline">KETERANGAN</th>
             </tr>
             <tr>
-                <td>1</td>
-                <td>kjkjkjkjkj</td>
-                <td>kjkjkljl</td>
-                <td>kkj</td>
+                <th>PENGANTAR</th>
             </tr>
         </table>
-        <div class="tanggal-end-surat">
-            <p>LURAH JOTANG</p>
-            <br>
-            <br>
-            <br>
-            <p style="text-decoration: underline; font-weight:bold; text-align:center;">NAMA</p>
-            <p style="text-align:center;">Penata Tingkat 1</p>
-            <p style="text-align:center;">NIP: 1938474788747 / 987</p>
-        </div>
 
-        <div class="tembusan">
-            <p><strong>Tembusan,</strong> disampaikan kepada Yth:</p>
-            <p>1. Arsip</p>
-        </div>
+        <p style="text-align: center;">Nomor : 02030/ /JTG</p>
+        <p style="text-align: center;">Yang bertanda tangan dibawah ini. menerangkan bahwa :</p>
+
+        <table class="content-surat" style="padding: 10px; border-collapse:collapse;">
+            <tr>
+                <td>1.</td>
+                <td>Nama</td>
+                <td>:</td>
+                <td><?= $data['nama'] ?></td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>Tempat dan Tanggal Lahir</td>
+                <td>:</td>
+                <td><?= $data['tempat_lahir'] ?> / <?= $data['tanggal_lahir'] ?></td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>Kewarganegaraan dan Agama</td>
+                <td>:</td>
+                <td><?= $data['kewarganegaraan'] ?> / <?= $data['agama'] ?></td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>Pekerjaan</td>
+                <td>:</td>
+                <td><?= $data['pekerjaan'] ?></td>
+            </tr>
+            <tr>
+                <td>5.</td>
+                <td>Alamat Tempat Tinggal</td>
+                <td>:</td>
+                <td><?= $data['alamat'] ?> , RT:<?= $data['rt'] ?> , RW:<?= $data['rw'] ?> , Desa:<?= $data['desa'] ?> , Kecamatan:<?= $data['kecamatan'] ?>, Kota:<?= $data['kota'] ?></td>
+            </tr>
+            <tr>
+                <td>6.</td>
+                <td>Surat Bukti Diri (KTP/KK)</td>
+                <td>:</td>
+                <td><?= $data['nik'] ?></td>
+            </tr>
+            <tr>
+                <td>7.</td>
+                <td>Keperluan</td>
+                <td>:</td>
+                <td><?= $data['keperluan'] ?></td>
+            </tr>
+            <tr>
+                <td>8.</td>
+                <td>Berlaku Mulai</td>
+                <td>:</td>
+                <td><?= $data['berlaku_tgl'] ?> - <?= $data['berakhir_tgl'] ?></td>
+            </tr>
+            <tr>
+                <td>9.</td>
+                <td>Keterangan lain-lain</td>
+                <td>:</td>
+                <td><?= $data['keterangan'] ?></td>
+            </tr>
+        </table>
+
+        <p style="text-align: center; margin-top:1rem;">Demikian untuk menjadikan maklum bagi yang berkepentingan</p>
+        <p style="text-align: center;">Nomor :..................................................</p>
+        <p style="text-align: center;">Tanggal :..................................................</p>
+        <p style="text-align: right; margin-top:2rem;">JOTANG, <?= $data['created_at'] ?></p>
+        <p style="text-align: center; margin-bottom:2rem;">Mengetahui,</p>
+
+
+        <table class="footer">
+            <tr>
+                <td>Tanda Tangan Pemegang <br> <br> <br> <br> <br> <br> </td>
+                <td>LURAH JOTANG <br><br><br> <br><br> <br></td>
+            </tr>
+            <tr>
+
+                <td class="space-ttd"><?= $data['nama'] ?></td>
+                <?php
+                $sqlDesa = mysqli_query($koneksi, "SELECT nama,jabatan,status FROM pegawai WHERE jabatan='KEPDES' AND status=1");
+                $dataKepdes = mysqli_fetch_assoc($sqlDesa);
+
+                ?>
+                <td class="space-ttd"><?= $dataKepdes['nama'] ?><br>Penata Tingkat 1 <br>NIP:989898</td>
+            </tr>
+
+        </table>
     <?php
     }
     ?>

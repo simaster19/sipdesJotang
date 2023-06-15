@@ -61,12 +61,12 @@ include '../Controller/queryData.php';
                                 <td><?= $data['nama_surat'] ?></td>
                                 <td><?= $data['nama_kk'] ?></td>
                                 <td><?= $data['no_kk'] ?></td>
-                                <td><?= $data['ambil'] ?></td>
+                                <td><?= $data['ambil'] == 'PENDING' ? '<span class="badge bg-warning">' . $data['ambil'] . '</span>' : '<span class="badge bg-success">' . $data['ambil'] . '</span>' ?></td>
                                 <td>
                                     <button data-bs-toggle="modal" data-bs-target="#ubahSuratKematian<?= $data['ids'] ?>" title="Ubah" class="btn-ubahSuratKematian btn btn-primary rounded-pill"><i class="bi bi-pencil-fill"></i></button>
 
 
-                                    <a href="content/print/surat_kematian_print.php?id=<?= $data['ids'] ?>"><button type="submit" title="Print" class="btn btn-danger rounded-pill"><i class="bi bi-printer-fill"></i></button></a>
+                                    <a href="content/print/surat_kematian_print.php?id=<?= $data['ids'] ?>" target="_blank"><button type="submit" title="Print" class="btn btn-danger rounded-pill"><i class="bi bi-printer-fill"></i></button></a>
                                     <a href="../Controller/konfirmasi_surat_kematian.php?id=<?= $data['ids'] ?>"><button type="submit" title="Konfirmasi Pengambilan" class="btn btn-success rounded-pill"><i class="bi bi-check"></i></button></a>
 
 

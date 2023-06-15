@@ -41,55 +41,55 @@ include '../Controller/queryData.php';
                                         <div class="col-md-6 col-12">
                                             <div class="form-group mandatory">
                                                 <label for="foto" class="form-label">Foto</label>
-                                                <input type="file" id="foto" class="form-control" name="foto" data-parsley-required="true">
+                                                <input type="file" id="foto" class="form-control" name="foto" data-parsley-required="true" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group mandatory">
                                                 <label for="nik" class="form-label">NIK</label>
-                                                <input type="text" id="nik" class="form-control" placeholder="NIK" name="nik" data-parsley-required="true">
+                                                <input type="number" id="nik" class="form-control" placeholder="NIK" name="nik" data-parsley-required="true" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group mandatory">
                                                 <label for="nama" class="form-label">Nama</label>
-                                                <input type="text" id="nama" class="form-control" placeholder="Nama Lengkap" name="nama" data-parsley-required="true">
+                                                <input type="text" id="nama" class="form-control" placeholder="Nama Lengkap" name="nama" data-parsley-required="true" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group mandatory">
                                                 <label for="dusun" class="form-label">Dusun</label>
-                                                <input type="text" id="dusun" class="form-control" placeholder="Dusun" name="dusun" data-parsley-required="true">
+                                                <input type="text" id="dusun" class="form-control" placeholder="Dusun" name="dusun" data-parsley-required="true" required>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-12">
                                             <div class="form-group mandatory">
                                                 <label for="rt" class="form-label">RT</label>
-                                                <input type="text" id="rt" class="form-control" placeholder="001" name="rt" data-parsley-required="true">
+                                                <input type="number" min="1" max="999" id="rt" class="form-control" placeholder="001" name="rt" data-parsley-required="true" required>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-12">
                                             <div class="form-group mandatory">
                                                 <label for="rw" class="form-label">RW</label>
-                                                <input type="text" id="rw" class="form-control" placeholder="008" name="rw" data-parsley-required="true">
+                                                <input type="number" min="1" max="999" id="rw" class="form-control" placeholder="008" name="rw" data-parsley-required="true" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group mandatory">
                                                 <label for="desa" class="form-label">Desa</label>
-                                                <input type="text" id="desa" class="form-control" placeholder="Desa" name="desa" data-parsley-required="true">
+                                                <input type="text" id="desa" class="form-control" placeholder="Desa" name="desa" data-parsley-required="true" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group mandatory">
                                                 <label for="kecamatan" class="form-label">Kecamatan</label>
-                                                <input type="text" id="kecamatan" class="form-control" placeholder="Kecamatan" name="kecamatan" data-parsley-required="true">
+                                                <input type="text" id="kecamatan" class="form-control" placeholder="Kecamatan" name="kecamatan" data-parsley-required="true" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <div class="form-group mandatory">
                                                 <label for="kota" class="form-label">Kota</label>
-                                                <input type="text" id="kota" class="form-control" placeholder="Kota" name="kota" data-parsley-required="true">
+                                                <input type="text" id="kota" class="form-control" placeholder="Kota" name="kota" data-parsley-required="true" required>
                                             </div>
                                         </div>
 
@@ -155,7 +155,7 @@ include '../Controller/queryData.php';
                                 </td>
                                 <td><?= $rt['nik'] ?></td>
                                 <td><?= $rt['nama'] ?></td>
-                                <td><?= $rt['status'] == 1 ? 'Active' : 'Non-Active' ?></td>
+                                <td><?= $rt['status'] == 1 ? '<span class="badge bg-success">Active</span>' :  '<span class="badge bg-danger">Non-Active</span>' ?></td>
                                 <td>
                                     <button data-bs-toggle="modal" data-bs-target="#ubahRT<?= $rt['id'] ?>" title="Ubah RT" class="btn-ubahRT btn btn-primary rounded-pill"><i class="bi bi-pencil-fill"></i></button>
 
@@ -204,7 +204,7 @@ include '../Controller/queryData.php';
                                                             <tr>
                                                                 <td>Status</td>
                                                                 <td>:</td>
-                                                                <td><?= $rt['status'] == 1 ? 'Active' : 'Non-Aktif' ?></td>
+                                                                <td><?= $rt['status'] == 1 ? '<span class="badge bg-success">Active</span>' :  '<span class="badge bg-danger">Non-Active</span>' ?></td>
                                                             </tr>
 
                                                         </table>
@@ -247,49 +247,49 @@ include '../Controller/queryData.php';
                                                             <div class="col-md-6 col-12">
                                                                 <div class="form-group mandatory">
                                                                     <label for="nik" class="form-label">NIK</label>
-                                                                    <input type="text" id="nik" class="form-control" placeholder="NIK" name="nik" data-parsley-required="true" value="<?= $rt['nik'] ?>">
+                                                                    <input type="text" id="nik" class="form-control" placeholder="NIK" name="nik" data-parsley-required="true" value="<?= $rt['nik'] ?>" required>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-12">
                                                                 <div class="form-group mandatory">
                                                                     <label for="nama" class="form-label">Nama</label>
-                                                                    <input type="text" id="nama" class="form-control" placeholder="Nama Lengkap" name="nama" data-parsley-required="true" value="<?= $rt['nama'] ?>">
+                                                                    <input type="text" id="nama" class="form-control" placeholder="Nama Lengkap" name="nama" data-parsley-required="true" value="<?= $rt['nama'] ?>" required>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-12">
                                                                 <div class="form-group mandatory">
                                                                     <label for="dusun" class="form-label">Dusun</label>
-                                                                    <input type="text" id="dusun" class="form-control" placeholder="Dusun" name="dusun" data-parsley-required="true" value="<?= $rt['dusun'] ?>">
+                                                                    <input type="text" id="dusun" class="form-control" placeholder="Dusun" name="dusun" data-parsley-required="true" value="<?= $rt['dusun'] ?>" required>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-3 col-12">
                                                                 <div class="form-group mandatory">
                                                                     <label for="rt" class="form-label">RT</label>
-                                                                    <input type="text" id="rt" class="form-control" placeholder="001" name="rt" data-parsley-required="true" value="<?= $rt['rt'] ?>">
+                                                                    <input type="number" min="1" max="999" id="rt" class="form-control" placeholder="001" name="rt" data-parsley-required="true" value="<?= $rt['rt'] ?>" required>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-3 col-12">
                                                                 <div class="form-group mandatory">
                                                                     <label for="rw" class="form-label">RW</label>
-                                                                    <input type="text" id="rw" class="form-control" placeholder="008" name="rw" data-parsley-required="true" value="<?= $rt['rw'] ?>">
+                                                                    <input type="number" min="1" max="999" id="rw" class="form-control" placeholder="008" name="rw" data-parsley-required="true" value="<?= $rt['rw'] ?>" required>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-12">
                                                                 <div class="form-group mandatory">
                                                                     <label for="desa" class="form-label">Desa</label>
-                                                                    <input type="text" id="desa" class="form-control" placeholder="Desa" name="desa" data-parsley-required="true" value="<?= $rt['desa'] ?>">
+                                                                    <input type="text" id="desa" class="form-control" placeholder="Desa" name="desa" data-parsley-required="true" value="<?= $rt['desa'] ?>" required>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-12">
                                                                 <div class="form-group mandatory">
                                                                     <label for="kecamatan" class="form-label">Kecamatan</label>
-                                                                    <input type="text" id="kecamatan" class="form-control" placeholder="Kecamatan" name="kecamatan" data-parsley-required="true" value="<?= $rt['kecamatan'] ?>">
+                                                                    <input type="text" id="kecamatan" class="form-control" placeholder="Kecamatan" name="kecamatan" data-parsley-required="true" value="<?= $rt['kecamatan'] ?>" required>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-12">
                                                                 <div class="form-group mandatory">
                                                                     <label for="kota" class="form-label">Kota</label>
-                                                                    <input type="text" id="kota" class="form-control" placeholder="Kota" name="kota" data-parsley-required="true" value="<?= $rt['kota'] ?>">
+                                                                    <input type="text" id="kota" class="form-control" placeholder="Kota" name="kota" data-parsley-required="true" value="<?= $rt['kota'] ?>" required>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-12">
